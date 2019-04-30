@@ -1,0 +1,3229 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1.0.0",
+    "title": "PetsCare APIs",
+    "termsOfService": ""
+  },
+  "host": "52.202.54.33",
+  "basePath": "/api",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/registration": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User"
+        ],
+        "summary": "Add a new user",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "first_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "last_name",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "email",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "password",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "address1",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "address2",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "country_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "state",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "city",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "pincode",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "phone",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "gender",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "dob",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "user_type",
+            "type": "string",
+            "enum": [
+              "App User",
+              "Administrator",
+              "Web User"
+            ],
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "profile_photo",
+            "type": "file",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "device_token",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "language_id",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "notifications_enabled",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "date_format_id",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "time_format_id",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "unit_system_id",
+            "type": "integer",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/update-user-profile": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User"
+        ],
+        "summary": "Update User Profile",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "first_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "last_name",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "email",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "address1",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "address2",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "country_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "state",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "city",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "pincode",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "phone",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "gender",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "dob",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "user_type",
+            "type": "string",
+            "enum": [
+              "App User",
+              "Administrator",
+              "Web User"
+            ],
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "profile_photo",
+            "type": "file",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "device_token",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "language_id",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "notifications_enabled",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "date_format_id",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "time_format_id",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "unit_system_id",
+            "type": "integer",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/get-user": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "get user data by ID",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/opdata"
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User"
+        ],
+        "summary": "User Login",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "email",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "password",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/fb-login": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User"
+        ],
+        "summary": "Facebook Login",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "email",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "user_type",
+            "type": "string",
+            "required": true,
+            "enum": [
+              "App User",
+              "Administrator",
+              "Web User"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/user-password-change": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User"
+        ],
+        "summary": "User Password Change",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "old_password",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "new_password",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/user-profile-image-upload": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User"
+        ],
+        "summary": "Upload User Profile Image",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "profile_photo",
+            "type": "file",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/user-profile-image": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User"
+        ],
+        "summary": "Get User Profile Image",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/forgot-password": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User"
+        ],
+        "summary": "Forgot Password",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "email",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/pet-type-list": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Pets"
+        ],
+        "summary": "list all Pet Types",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/pet-breed-list": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Pets"
+        ],
+        "summary": "list all Pet Breeds",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/pet-add": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Pets"
+        ],
+        "summary": "Add New Pet",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "pet_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_type_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_breed_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "gender",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "dob",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "pet_photo",
+            "type": "file",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/pet-update": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Pets"
+        ],
+        "summary": "Update Pet",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "pet_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_type_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_breed_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "gender",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "dob",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "pet_photo",
+            "type": "file",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/pet-image": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Pets"
+        ],
+        "summary": "Get Pet Image by IDs",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "pet_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/pet-image-upload": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Pets"
+        ],
+        "summary": "Upload Pet Image",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_photo",
+            "type": "file",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/get-pet-data": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Pets"
+        ],
+        "summary": "Get Pet Data by IDs",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "pet_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/pets-by-user": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Pets"
+        ],
+        "summary": "Get Pet Data by User ID",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/groomer-details": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Groomers"
+        ],
+        "summary": "Groomer Details",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "pets_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/groomer-list": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Groomers"
+        ],
+        "summary": "Groomers List",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/groomer-list-by-user": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Groomers"
+        ],
+        "summary": "Groomers List by User",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/groomer-add": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Groomers"
+        ],
+        "summary": "Groomer Add",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "groomer_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "address1",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "address2",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "country_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "phone",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "pincode",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "state",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "city",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/groomer-update": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Groomers"
+        ],
+        "summary": "Groomer Update",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "groomer_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "groomer_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "address1",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "address2",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "country_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "phone",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "pincode",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "state",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "city",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/groomer-delete": {
+      "delete": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Groomers"
+        ],
+        "summary": "Groomer Delete",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "groomer_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/set-user-groomer": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Groomers"
+        ],
+        "summary": "User Associate with Groomers",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "groomers_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/update-user-groomer": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Groomers"
+        ],
+        "summary": "Update User Associate with Groomers",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "user_groomers_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "groomers_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/delete-user-groomer": {
+      "delete": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Groomers"
+        ],
+        "summary": "Delete User Associate with Groomers",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "user_groomers_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/user-groomer-list": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Groomers"
+        ],
+        "summary": "User Associate with Groomers",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/set-pet-groomer": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Groomers"
+        ],
+        "summary": "Set Pet ID with Pet Groomers",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "groomers_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "amount",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "visit_title",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "visit_description",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "last_visited_date",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "earlier_visit_date",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "next_visit_date",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/update-pet-groomer": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Groomers"
+        ],
+        "summary": "Update Pet ID with Pet Groomers",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "pet_groomers_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "groomers_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "amount",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "visit_title",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "visit_description",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "last_visited_date",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "earlier_visit_date",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "next_visit_date",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/delete-pet-groomer": {
+      "delete": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Groomers"
+        ],
+        "summary": "Update Pet ID with Pet Groomers",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "pet_groomers_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/vets-list": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "Vets List",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/vets-list-by-user": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "Vets List by User",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/vets-list-by-pet": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "Vets List by Pet",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pets_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/vets-add": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "Add New Vet",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "vet_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "phone",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "address1",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "address2",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "country_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pincode",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "state",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "city",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/vets-update": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "Update Vet",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "vets_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "vet_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "phone",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "address1",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "address2",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "country_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pincode",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "state",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "city",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/vets-delete": {
+      "delete": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "Delete Vet",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "vets_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/user-vets-pet-list": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "User Vet Pet List",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/set-vet-pet": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "Set Vet ID with Pet ID",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pets_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "vets_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/update-vet-pet": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "Update Vet ID with Pet ID",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "vet_pet_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pets_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "vets_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/delete-vet-pet": {
+      "delete": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "Update Vet ID with Pet ID",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "vet_pet_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/user-vet-list": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "Set User ID with Vet ID",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/set-user-vet": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "Set User ID with Vet ID",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "vets_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/update-user-vet": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "Update User ID with Vet ID",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_vets_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "vets_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/delete-user-vet": {
+      "delete": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vets"
+        ],
+        "summary": "Delete User ID with Vet ID",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "user_vets_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/breed-add": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Breeds"
+        ],
+        "summary": "Add New Breed",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "breed_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_type_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "description",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/breed-update": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Breeds"
+        ],
+        "summary": "Add New Breed",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "pet_breed_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "breed_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_type_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "description",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/breed-delete": {
+      "delete": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Breeds"
+        ],
+        "summary": "Add New Breed",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "pet_breed_id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/pet-vaccination-list": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vaccination"
+        ],
+        "summary": "List of Vaccination by User ID",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "pets_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/add-pet-vaccination": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vaccination"
+        ],
+        "summary": "Add Vaccination for Pet",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pets_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "vets_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "vaccine_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "vaccine_description",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "vaccine_date",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "amount",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/update-pet-vaccination": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vaccination"
+        ],
+        "summary": "Update Vaccination for Pet",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "pet_vaccination_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pets_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "vets_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "vaccine_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "vaccine_description",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "vaccine_date",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "amount",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/delete-pet-vaccination": {
+      "delete": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Vaccination"
+        ],
+        "summary": "Update Vaccination for Pet",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "pet_vaccination_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/user-sitters-add": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User Sitters"
+        ],
+        "summary": "Add New User Sitter",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "sitter_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "sitter_address_line_1",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "sitter_address_line_2",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "city",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "state",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "country_id",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "zip",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "sitter_phone",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/user-sitters-edit": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User Sitters"
+        ],
+        "summary": "Edit User Sitter",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "sitter_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "sitter_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "sitter_address_line_1",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "sitter_address_line_2",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "city",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "state",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "country_id",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "zip",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "sitter_phone",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/user-sitters-delete": {
+      "delete": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User Sitters"
+        ],
+        "summary": "Delete User Sitter",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sitter_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/user-sitters-list-by-user": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User Sitters"
+        ],
+        "summary": "User Sitter List by User ID",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/user-sitters-info": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User Sitters"
+        ],
+        "summary": "User Sitter Info by Sitter ID and User ID",
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sitter_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/create-calendar": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Appointments"
+        ],
+        "summary": "Create New Calendar",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "appointment_date",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "appointment_time",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "appointment_type_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "appointment_type_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "appointment_with_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "appointment_with_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "price",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "notes",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/edit-calendar": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Appointments"
+        ],
+        "summary": "Create New Calendar",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_calendar_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "pet_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "appointment_date",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "appointment_time",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "appointment_type_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "appointment_type_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "appointment_with_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "appointment_with_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "price",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "formData",
+            "name": "notes",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/get-appointment-by-type": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Appointments"
+        ],
+        "summary": "Create New Calendar",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "appointment_type_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "month",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/get-calendar": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Appointments"
+        ],
+        "summary": "Create New Calendar",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "month",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/appointment-type": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Appointments"
+        ],
+        "summary": "All Appointment Type",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/get-tips-by-user": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Tips"
+        ],
+        "summary": "Create New Calendar",
+        "description": "",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "user_id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/list-language": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Language"
+        ],
+        "summary": "All Languages",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/date-format": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Date - Time"
+        ],
+        "summary": "get All Date Format",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/time-format": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Date - Time"
+        ],
+        "summary": "get All Time Format",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/country-list": {
+      "get": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Country List"
+        ],
+        "summary": "list all country",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "user_registration": {
+      "type": "object",
+      "properties": {
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "contry_id": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "dob": {
+          "type": "string"
+        },
+        "user_type": {
+          "type": "string"
+        }
+      }
+    },
+    "opdata": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
